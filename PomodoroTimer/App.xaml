@@ -4,6 +4,25 @@
              xmlns:local="clr-namespace:PomodoroTimer"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <Style x:Key="ConfigTextBlockStyle" TargetType="TextBlock">
+            <Setter Property="HorizontalAlignment" Value="Right" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="Padding" Value="5" />
+            <Setter Property="Foreground" Value="Azure" />
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="FontFamily" Value="Verdana" />
+        </Style>
+        <Style x:Key="ConfigTextBoxStyle" TargetType="TextBox">
+            <Setter Property="Height" Value="24" />
+            <Setter Property="Width" Value="32" />
+            <Setter Property="HorizontalAlignment" Value="Left" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="Margin" Value="20,5" />
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="Foreground" Value="Black" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="FontFamily" Value="Verdana" />
+        </Style>
     </Application.Resources>
 </Application>

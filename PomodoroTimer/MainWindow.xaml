@@ -5,8 +5,63 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PomodoroTimer"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
+        Title="Pomodoro Timer" Height="350" Width="525">
+    <Grid Background="Gray">
+        <Border BorderThickness="4" BorderBrush="Black" />
+        <StackPanel Orientation="Vertical">
+            <TextBlock HorizontalAlignment="Center" FontSize="28" FontFamily="Verdana"
+                Text="Pomodoro Timer" Foreground="Azure" Padding="8" />
+            <Grid x:Name="ConfigurationGrid" Visibility="Visible">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*" />
+                    <ColumnDefinition Width="2*" />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Column="0" Grid.Row="1" Style="{StaticResource ConfigTextBlockStyle}" Text="Number of rounds" />
+                <TextBlock Grid.Column="0" Grid.Row="2" Style="{StaticResource ConfigTextBlockStyle}" Text="Round length (min)" />
+                <TextBlock Grid.Column="0" Grid.Row="3" Style="{StaticResource ConfigTextBlockStyle}" Text="Short break (min)" />
+                <TextBlock Grid.Column="0" Grid.Row="4" Style="{StaticResource ConfigTextBlockStyle}" Text="Long break (min)" />
+
+                <TextBox x:Name="RoundCountTextBox" 
+                         Grid.Column="1" Grid.Row="1" Style="{StaticResource ConfigTextBoxStyle}" Text="4" />
+                <TextBox x:Name="RoundLengthTextBox"
+                         Grid.Column="1" Grid.Row="2" Style="{StaticResource ConfigTextBoxStyle}" Text="1" />
+                <TextBox x:Name="ShortBreakTextBox"
+                         Grid.Column="1" Grid.Row="3" Style="{StaticResource ConfigTextBoxStyle}" Text="1" />
+                <TextBox x:Name="LongBreakTextBox"
+                         Grid.Column="1" Grid.Row="4" Style="{StaticResource ConfigTextBoxStyle}" Text="5" />
+
+                <Button x:Name="StartButton" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="5" Height="32" Width="72"
+                        Margin="20" Background="Azure" Click="StartButton_Click">
+                    <TextBlock Style="{StaticResource ConfigTextBlockStyle}" Foreground="Black" Text="start" />
+                </Button>
+            </Grid>
+            <Grid x:Name="TimerGrid" Visibility="Collapsed" Margin="20,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="2*" />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock x:Name="DisplayTimeTextBlock" Grid.Column="0" Grid.Row="1"
+                           Style="{StaticResource ConfigTextBlockStyle}" FontSize="36" 
+                           HorizontalAlignment="Center" Text="00:00" />
+                <TextBlock x:Name="RemainingRoundsTextBlock" Grid.Column="0" Grid.Row="2"
+                           Style="{StaticResource ConfigTextBlockStyle}" FontSize="18" 
+                           HorizontalAlignment="Center" Text="(4 rounds left)" />
+            </Grid>
+        </StackPanel>
     </Grid>
 </Window>
