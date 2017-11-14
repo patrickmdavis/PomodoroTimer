@@ -16,13 +16,6 @@ namespace PomodoroTimer
         List<TextBox> InputTextBoxes;
 
         TimerTracker TimerTracker;
-        /*
-        int remainingRounds;
-        TimerPattern timerPattern;
-        Timer timer;
-        DateTime startTime;
-        DateTime endTime;
-        */
 
         public MainWindow()
         {
